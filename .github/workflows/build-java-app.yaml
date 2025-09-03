@@ -1,11 +1,11 @@
 name: greetings
 on: push
-permissions:
-  content: read
-  package: write
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -22,4 +22,6 @@ jobs:
           name: hello-world
           path: java-app/target/*.jar
       - name: publish
-        run: mvn deploy --file java-app/pom.xml
+        run: mvn --batch-mode deploy --file java-app/pom.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
