@@ -1,0 +1,11 @@
+name: greetings
+on:
+  issues:
+    types: [opened]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run a one-line script
+        run: echo Thhanks you guys ! You are great !
