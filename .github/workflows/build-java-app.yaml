@@ -12,4 +12,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: build and test
-        run: mvn package test deploy --file java-app/pom.xml
+        run: mvn package test --file java-app/pom.xml
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hello-world
+          path: java-app/target/*.jar
