@@ -6,6 +6,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
       - name: Run a one-line script
         run: echo Thanks guys ! You are great !
