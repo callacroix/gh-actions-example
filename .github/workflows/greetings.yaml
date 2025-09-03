@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Run a one-line script
-        run: echo Thhanks you guys ! You are great !
+        run: echo Thanks guys ! You are great !
