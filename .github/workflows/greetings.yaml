@@ -2,9 +2,15 @@ name: greetings
 on:
   issues:
     types: [opened]
+permissions:
+  issues: write
+  pull-requests: write
 jobs:
-  build:
+  greeting:
+    name: Greet First-Time Contributors
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
-        run: echo Thanks guys ! You are great !
+      - uses: actions/first-interaction@v3
+        with:
+          issue-message: |
+            Hello guys ! You are great !
