@@ -19,4 +19,4 @@ jobs:
           name: hello-world
           path: java-app/target/*.jar
       - name: publish
-        run: mvn deploy
+        run: mvn deploy --file java-app/pom.xml
