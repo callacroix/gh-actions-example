@@ -4,13 +4,13 @@ on:
     types: [opened]
 permissions:
   issues: write
-  pull-requests: write
 jobs:
-  greeting:
-    name: Greet First-Time Contributors
+  say-hi:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/first-interaction@v3
+      - name: Post comment
+        uses: KeisukeYamashita/create-comment@v1
         with:
-          issue_message: |
-            Hello guys ! You are great !
+          comment: |
+            Issue title must start with 'ABC-'.
+            Auto-closing this issue.
