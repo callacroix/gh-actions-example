@@ -18,3 +18,5 @@ jobs:
         with:
           name: hello-world
           path: java-app/target/*.jar
+      - name: publish
+        run: mvn deploy
